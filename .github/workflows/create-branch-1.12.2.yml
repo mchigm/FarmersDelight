@@ -36,7 +36,10 @@ jobs:
               console.log(`Branch ${newBranch} already exists, skipping creation.`);
               return;
             } catch (e) {
-              if (e.status !== 404) throw e;
+              if (e.status !== 404) {
+                console.error(`Failed to check if branch ${newBranch} exists:`, e.message);
+                throw e;
+              }
             }
 
             // Get the SHA of the source branch
