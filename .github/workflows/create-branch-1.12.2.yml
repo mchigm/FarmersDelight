@@ -1,6 +1,9 @@
 name: Create branch 1.12.2
 
 on:
+  push:
+    branches:
+      - 'copilot/create-branch-1-12-2'
   workflow_dispatch:
     inputs:
       source_branch:
@@ -18,8 +21,23 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const sourceBranch = '${{ github.event.inputs.source_branch }}';
+            const sourceBranch = context.eventName === 'workflow_dispatch'
+              ? '${{ github.event.inputs.source_branch }}'
+              : 'feature-1.20/wooden-basket';
             const newBranch = '1.12.2';
+
+            // Check if the branch already exists
+            try {
+              await github.rest.git.getRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `heads/${newBranch}`,
+              });
+              console.log(`Branch ${newBranch} already exists, skipping creation.`);
+              return;
+            } catch (e) {
+              if (e.status !== 404) throw e;
+            }
 
             // Get the SHA of the source branch
             const { data: ref } = await github.rest.git.getRef({
