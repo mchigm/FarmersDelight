@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "farmersdelight",
+    "name": "Farmer's Delight",
+    "description": "A cozy farming and cooking expansion for Minecraft!",
+    "version": "1.12.2-1.0.0",
+    "mcversion": "1.12.2",
+    "url": "https://github.com/vectorwing/FarmersDelight",
+    "updateUrl": "",
+    "authorList": ["vectorwing"],
+    "credits": "Chloe Dawn, Grimmauld, CDAGaming, TelepathicGrunt, ConductiveFoam, simibubi, Jozufozu, bagel, Silk, SkySom, Eutro, RaymondBlaze and many others!",
+    "logoFile": "logo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
