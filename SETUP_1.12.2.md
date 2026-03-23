@@ -92,7 +92,7 @@ To build the mod JAR file:
 ./gradlew build
 ```
 
-The compiled mod will be located in `build/libs/FarmersDelight-1.12.2-1.0.0.jar`
+The compiled mod will be located in the `build/libs/` directory (the JAR name will start with `FarmersDelight-` and include the project version).
 
 ## Important Notes
 
