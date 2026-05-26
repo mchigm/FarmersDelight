@@ -8,9 +8,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 /**
- * References to tags under the Forge namespace.
- * These tags are generally used for crafting recipes across different mods.
+ * Deprecated - Use CommonTags instead.
  */
+@Deprecated(forRemoval = true)
 public class ForgeTags
 {
 	// Blocks that are efficiently mined with a Knife.
